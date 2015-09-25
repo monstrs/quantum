@@ -1,26 +1,29 @@
 {
   "name": "quantum",
   "version": "0.1.0",
-  "main": "lib/index.js",
-  "files": [
-    "lib"
-  ],
+  "main": "lib",
   "dependencies": {
     "recast": "0.7.5",
     "webpack-core": "0.6.5",
+    "style-loader": "^0.12.4",
     "loader-utils": "0.2.10",
-    "babel-core": "5.5.6",
-    "contextify": "0.1.14",
+    "babel-core": "^5.8.22",
+    "babel-runtime": "^5.8.20",
     "j2c": "0.7.3",
     "underscore.string": "3.1.1",
     "underscore": "1.8.3",
     "replace-ext": "0.0.1"
   },
   "devDependencies": {
-    "webpack": "1.9.11",
-    "eslint": "0.22.1"
+    "webpack": "^1.12.0",
+    "eslint": "^1.2.1",
+    "babel": "^v5.8.21",
+    "babel-eslint": "^4.0.10",
+    "eslint": "^1.2.1",
+    "eslint-config-airbnb": "^0.0.8"
   },
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint src",
+    "build": "rm -rf lib && babel -d lib src"
   }
 }
