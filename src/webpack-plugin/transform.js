@@ -1,6 +1,7 @@
 import vm from 'vm'
 import recast from 'recast'
 import stylesToCSS from './stylesToCSS'
+import { getClassName as getFinalClassName } from './../utils'
 
 const n = recast.types.namedTypes
 const b = recast.types.builders
@@ -56,6 +57,10 @@ function transform(src, map, prefix) {
                     item.argument.arguments[1] = b.objectExpression([this.createClassNameGetter(property.value.id.name.replace('render', ''))])
                   } else if (n.CallExpression.check(props) && props.callee.name === '_extends') {
                     item.argument.arguments[1].arguments[2].properties.push(this.createClassNameGetter(property.value.id.name.replace('render', '')))
+                  } else if (n.MemberExpression.check(props)) {
+                    const extendsDeclaration = b.memberExpression(b.callExpression(b.identifier('require'), [b.literal('babel-runtime/helpers/extends')]), b.identifier('default'), false)
+                    const classNameDeclaration = b.objectExpression([this.createClassNameGetter(property.value.id.name.replace('render', ''))])
+                    item.argument.arguments[1] = b.callExpression(extendsDeclaration, [b.objectExpression([]), props, classNameDeclaration])
                   }
                 }
               }
@@ -127,11 +132,9 @@ function transform(src, map, prefix) {
     buildStyleClassDeclaration: function buildStyleClassDeclaration(callee, style, className) {
       const properties = []
       style.properties.forEach((property) => {
-        let finalClassName = className
-        if (property.key.name !== 'self') {
-          finalClassName += '--' + property.key.name
-        }
-        properties.push(b.property('init', b.literal(property.key.name), b.literal(finalClassName)))
+        const target = property.key.name || property.key.value
+        const finalClassName = getFinalClassName(className, target)
+        properties.push(b.property('init', b.literal(target), b.literal(finalClassName)))
       })
 
       return b.callExpression(callee, [b.objectExpression(properties)])

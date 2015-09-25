@@ -1,7 +1,9 @@
-import ConcatSource from 'webpack-core/lib/ConcatSource'
+import webpack from 'webpack'
+import CSSResolver from './css-resolver'
+import cssfs from './cssfs'
 
-function QuantumStylePlugin(target) {
-  this.target = target
+function QuantumStylePlugin() {
+  this.resolverPlugin = new webpack.ResolverPlugin([CSSResolver])
 }
 
 QuantumStylePlugin.loader = function loader(options) {
@@ -9,12 +11,10 @@ QuantumStylePlugin.loader = function loader(options) {
 }
 
 QuantumStylePlugin.prototype.apply = function apply(compiler) {
-  const target = this.target
-  compiler.plugin('compilation', (compilation) => {
-    compilation.plugin('optimize-chunk-assets', (chunks, callback) => {
-      compilation.assets[target] = new ConcatSource(require('./collector').source())
-      callback()
-    })
+  this.resolverPlugin.apply(compiler)
+
+  compiler.plugin('environment', function environment() {
+    compiler.inputFileSystem = cssfs
   })
 }
 

@@ -1,8 +1,9 @@
 import 'babel-core/external-helpers'
+import { modifierMatch } from './utils'
 
 const babelHelpers = global.babelHelpers
 
-function style(classMap) {
+export default function style(classMap) {
   return (target, key, descriptor) => {
     const classNameGetter = `get${key.replace('render', '')}ClassName`
 
@@ -15,19 +16,7 @@ function style(classMap) {
       }
 
       for (const modifier in classMap) {
-        if (modifier === 'self') {
-          classNames.push(classMap[modifier])
-        } else if (modifier.indexOf('_') !== -1 ) {
-          const [modifierName, value] = modifier.split('_')
-
-          if (this.state && this.state[modifierName] === value) {
-            classNames.push(classMap[modifier])
-          } else if (this.props[modifierName] === value) {
-            classNames.push(classMap[modifier])
-          }
-        } else if (this.state && this.state[modifier]) {
-          classNames.push(classMap[modifier])
-        } else if (this.props[modifier]) {
+        if (modifierMatch(modifier, this.props, this.state)) {
           classNames.push(classMap[modifier])
         }
       }
@@ -38,5 +27,3 @@ function style(classMap) {
     return descriptor
   }
 }
-
-export default style
