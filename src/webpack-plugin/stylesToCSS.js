@@ -1,4 +1,5 @@
 import j2c from 'j2c'
+import { getClassName } from './../utils'
 
 function hyphenate(styles) {
   if (Array.isArray(styles)) {
@@ -19,18 +20,9 @@ function hyphenate(styles) {
 
 function stylesToCSS(style, className) {
   const result = Object.keys(style).map((modifier) => {
-    let finalClassName = '.'
-    const sheet = {}
-
-    if (modifier === 'self') {
-      finalClassName += className
-    } else {
-      finalClassName += `${className}--${modifier}`
-    }
-
-    sheet[finalClassName] = hyphenate(style[modifier])
-
-    return j2c.sheet(sheet).replace(/\n/g, '')
+    return j2c.sheet({
+      [`.${getClassName(className, modifier)}`]: hyphenate(style[modifier]),
+    }).replace(/\n/g, '')
   })
 
   return result.join('')
