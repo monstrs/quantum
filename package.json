@@ -8,13 +8,15 @@
     "loader-utils": "0.2.10",
     "babel-core": "^5.8.22",
     "babel-runtime": "^5.8.20",
-    "j2c": "0.7.3",
+    "jss": "^2.3.5",
+    "jss-nested": "^0.2.0",
     "ramda": "^0.17.1",
     "underscore.string": "3.1.1",
     "underscore": "1.8.3",
     "replace-ext": "0.0.1",
     "memfs": "^0.0.6",
-    "unionfs": "git://github.com/monstrs-forks/unionfs.git"
+    "unionfs": "git://github.com/monstrs-forks/unionfs.git",
+    "clear-require": "^1.0.1"
   },
   "devDependencies": {
     "webpack": "^1.12.0",
