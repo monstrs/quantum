@@ -1,3 +1,4 @@
+import fs from 'fs'
 import transform from './transform'
 import classNameFromPath from './classNameFromPath'
 import cssfs from './cssfs'
@@ -10,8 +11,13 @@ function loader(src, map) {
   if (/_createDecoratedClass/.exec(src) && /quantum/.exec(src)) {
     const options = this.options.quantum || {}
     const className = classNameFromPath(this.resourcePath, options)
+    let theme = {}
 
-    const result = transform(src, map, className)
+    if (options.theme && fs.existsSync(options.theme)) {
+      theme = require(options.theme)
+    }
+
+    const result = transform(src, map, className, theme)
 
     let code = result.code
 

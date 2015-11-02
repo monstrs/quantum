@@ -6,7 +6,7 @@ import { getClassName as getFinalClassName } from './../utils'
 const n = recast.types.namedTypes
 const b = recast.types.builders
 
-function transform(src, map, prefix) {
+function transform(src, map, prefix, theme) {
   let css = ''
   const tree = recast.parse(src)
 
@@ -126,7 +126,7 @@ function transform(src, map, prefix) {
     extractStyles: function extractStyles(node, className) {
       const source = '(function() { return ' + recast.print(node).code + '})();'
 
-      css += stylesToCSS(vm.runInNewContext(source, {}), className)
+      css += stylesToCSS(vm.runInNewContext(source, {}), className, theme)
     },
 
     buildStyleClassDeclaration: function buildStyleClassDeclaration(callee, style, className) {
