@@ -22,13 +22,21 @@ function loader(src, map) {
     let code = result.code
 
     if (result.css.length > 0) {
-      const target = `/cssfs${this.resourcePath.replace('.js', '.css')}`
+      const time = (new Date()).valueOf().toString()
+      const target = `/cssfs${this.resourcePath.replace('.js', `-${time}.css`)}`
+      const targetParts = target.split('/')
+      const [filename] = targetParts.pop().split('-')
+      const dirname = targetParts.join('/')
 
-      if (cssfs.existsSync(target)) {
-        cssfs.writeFileSync(target, result.css)
-      } else {
-        cssfs.appendFileSync(target, result.css)
-      }
+      var pattern = new RegExp(`^${filename}-(\\d+)\.css`)
+
+      cssfs.readdirSync(dirname).forEach(file => {
+        if (pattern.test(file)) {
+          cssfs.unlinkSync(`${dirname}/${file}`)
+        }
+      })
+
+      cssfs.appendFileSync(target, result.css)
 
       code += `\nrequire('${target}')`
     }
