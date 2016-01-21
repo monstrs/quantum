@@ -10,6 +10,10 @@ describe('check utils', () => {
   it('check match named modifier', () => {
     expect(modifierMatch('modifier', { modifier: true })).to.be.true
     expect(modifierMatch('modifier', {}, { modifier: true })).to.be.true
+    expect(modifierMatch('modifier', {}, { modifier: ['value'] })).to.be.true
+    expect(modifierMatch('modifier', {}, { modifier: false })).to.be.false
+    expect(modifierMatch('modifier', {}, { modifier: [] })).to.be.false
+    expect(modifierMatch('modifier', {}, {})).to.be.false
   })
 
   it('check match named with value modifier', () => {

@@ -17,6 +17,7 @@ import {
   replace,
   toLower,
   isEmpty,
+  isNil,
 } from 'ramda'
 
 export const capitalize = converge((h, t) => h + t, pipe(toUpper, head), tail)
@@ -35,9 +36,18 @@ export const modifierMatch = (modifier, props = {}, state = {}) => {
 
   const modifierPath = modifierToPath(modifier)
 
+  const linearMatch = (target) => {
+    const value = path(modifierPath, target)
+
+    if (is(Boolean, value)) return value
+    if (isNil(value)) return false
+
+    return !isEmpty(value)
+  }
+
   const matcher = modifierPath.length > 1 ?
                     pathEq(init(modifierPath), last(modifierPath)) :
-                    pathEq(modifierPath, true)
+                    linearMatch
 
   return matcher(props) || matcher(state)
 }
