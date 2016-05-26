@@ -3,9 +3,11 @@ import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import babelPlugin from '../src/babel'
 import webpackLoader from '../src/webpack'
+import CssResolvePlugin from '../src/webpack/css-resolve-plugin'
 
 export const entry = [
   'webpack-hot-middleware/client',
+  'react-hot-loader/patch',
   __dirname,
 ]
 
@@ -33,6 +35,7 @@ export const module = {
         ],
         plugins: [
           babelPlugin,
+          'react-hot-loader/babel',
         ],
       },
     },
@@ -53,6 +56,7 @@ export const resolve = {
 }
 
 export const plugins = [
-  new HtmlWebpackPlugin({}),
+  new CssResolvePlugin(),
   new webpack.HotModuleReplacementPlugin(),
+  new HtmlWebpackPlugin({}),
 ]

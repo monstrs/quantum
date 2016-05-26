@@ -8,9 +8,11 @@
     "jss-camel-case": "^1.1.0",
     "jss-nested": "^1.0.3",
     "jss-vendor-prefixer": "^2.0.0",
+    "memfs": "^0.0.6",
     "ramda": "^0.21.0",
     "react": "^15.0.1",
-    "virtual-module-webpack-plugin": "^0.1.1"
+    "virtual-module-webpack-plugin": "^0.1.1",
+    "unionfs": "git://github.com/monstrs-forks/unionfs.git"
   },
   "devDependencies": {
     "babel-cli": "^6.7.5",
@@ -32,6 +34,7 @@
     "mocha": "^2.4.5",
     "react-addons-test-utils": "^15.0.1",
     "react-dom": "^15.0.1",
+    "react-hot-loader": "^3.0.0-beta.2",
     "style-loader": "^0.13.1"
   },
   "scripts": {

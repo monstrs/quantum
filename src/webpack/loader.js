@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
-import VirtualModulePlugin from 'virtual-module-webpack-plugin'
 import { hasStyles, extractStyles } from '../babel/plugin'
 import { stylesToRule } from '../transform'
+import cssfs from './cssfs'
 
 function loader(src, map) {
   if (this.cacheable) {
@@ -9,17 +9,13 @@ function loader(src, map) {
   }
 
   if (hasStyles(src)) {
-    const target = `${this.resourcePath}.css`
+    const target = `/cssfs${this.resourcePath}.css`
     const content = `module.exports = ${extractStyles(src)}`
     const rules = this.exec(content, target)
     const css = stylesToRule(rules).toString()
 
     if (css.length > 0) {
-      const fs = this._compilation.compiler.inputFileSystem
-
-      const stats = VirtualModulePlugin.createStats({ contents: css })
-      fs._statStorage.data[target] = [null, stats]
-      fs._readFileStorage.data[target] = [null, css]
+      cssfs.appendFileSync(target, css)
 
       return this.callback(null, `${src}\nrequire('${target}')`, map)
     }
