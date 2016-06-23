@@ -1,20 +1,17 @@
 {
-  "extends": "airbnb/base",
+  "extends": "airbnb",
   "parser": "babel-eslint",
+  "root": true,
   "env": {
     "node": true,
-    "mocha": true,
-    "browser": true,
-    "es6": true
-  },
-  "globals": {
-    "__DEV__": true,
-    "__SERVER__": true
+    "mocha": true
   },
   "rules": {
-    "strict": [2, "never"],
-    "indent": [2, 2],
-    "quotes": [2, "single"],
-    "semi": [2, "never"]
+    "semi": [2, "never"],
+    "max-len": [2, 120, 2, {
+      "ignoreUrls": true,
+      "ignoreComments": false
+    }],
+    "react/prefer-stateless-function": 0
   }
 }
