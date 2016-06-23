@@ -1,3 +1,4 @@
+import { join, isAbsolute } from 'path'
 import { getModClassName, getClassNameFromPath } from '../utils/className'
 
 const STYLES_COMMENT_ID = 'QUANTUM_STYLES_COMMENT'
@@ -13,12 +14,21 @@ export function extractStyles(code) {
   return (parts[1] || '').substr(1).replace(`var ${EXTRACTED_STYLES_VAR} = `, '')
 }
 
+export function getFileRootPath(configPath = '') {
+  if (configPath && isAbsolute(configPath)) {
+    return configPath
+  }
+
+  return join(process.cwd(), configPath)
+}
+
 export default function ({ types: t }) {
   return {
     visitor: {
       Program: {
-        enter() {
+        enter(path, state) {
           this.extractedStyles = []
+          this.fileRootPath = getFileRootPath(state.opts.rootPath)
         },
         exit(path) {
           if (this.extractedStyles.length === 0) {
@@ -62,8 +72,9 @@ export default function ({ types: t }) {
         if (this.localImportName !== node.callee.object.name) return
 
         if (node.callee.property.name === 'create') {
-          const { filename, moduleRoot, quantum = {} } = hub.file.opts
-          const className = getClassNameFromPath(filename, quantum.root || moduleRoot)
+          const { filename } = hub.file.opts
+
+          const className = getClassNameFromPath(filename, this.fileRootPath)
           const properties = node.arguments[0].properties
 
           const { classMap, styles } = properties.reduce((result, { key, value }) => {
