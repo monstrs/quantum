@@ -34,7 +34,9 @@ export const module = {
           'react',
         ],
         plugins: [
-          babelPlugin,
+          [babelPlugin, {
+            'rootPath': './examples',
+          }],
           'react-hot-loader/babel',
         ],
       },
