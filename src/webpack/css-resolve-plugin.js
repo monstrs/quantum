@@ -8,7 +8,7 @@ class CssResolvePlugin {
 
   apply(compiler) {
     compiler.resolvers.normal.plugin('resolve', function resolverPlugin(request, callback) {
-      if (request.request.indexOf('/cssfs') == 0) {
+      if (request.request.indexOf('/cssfs') === 0) {
         const fs = this.fileSystem
 
         const css = cssfs.readFileSync(request.request)
