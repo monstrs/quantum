@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet } from 'quantum'
+import { StyleSheet } from 'elementum'
 
 const styles = StyleSheet.create({
   self: {
