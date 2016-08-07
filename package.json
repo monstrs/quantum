@@ -3,15 +3,22 @@
   "version": "0.1.0",
   "main": "lib",
   "dependencies": {
+    "autoprefixer": "^6.4.0",
     "babel-core": "^6.8.0",
+    "babel-loader": "^6.2.4",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^2.0.0-beta.3",
     "jss": "^3.9.0",
     "jss-camel-case": "^1.1.0",
     "jss-nested": "^1.0.3",
     "jss-vendor-prefixer": "^2.0.0",
     "memfs": "^0.0.6",
+    "postcss-loader": "^0.9.1",
     "ramda": "^0.21.0",
     "react": "^15.0.1",
-    "unionfs": "git://github.com/monstrs-forks/unionfs.git"
+    "style-loader": "^0.13.1",
+    "unionfs": "git://github.com/monstrs-forks/unionfs.git",
+    "webpack": "^2.1.0-beta.20"
   },
   "devDependencies": {
     "babel-cli": "^6.7.5",
@@ -23,6 +30,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.7.2",
     "chai": "^3.5.0",
+    "commander": "^2.9.0",
     "css-loader": "^0.23.1",
     "enzyme": "^2.2.0",
     "eslint": "^2.8.0",
@@ -30,11 +38,16 @@
     "eslint-plugin-import": "^1.6.0",
     "eslint-plugin-jsx-a11y": "^1.0.3",
     "eslint-plugin-react": "^5.0.1",
+    "express": "^4.14.0",
+    "html-webpack-plugin": "^2.22.0",
+    "memory-fs": "^0.3.0",
     "mocha": "^2.4.5",
     "react-addons-test-utils": "^15.0.1",
     "react-dom": "^15.0.1",
     "react-hot-loader": "^3.0.0-beta.2",
-    "style-loader": "^0.13.1"
+    "style-loader": "^0.13.1",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-hot-middleware": "^2.12.2"
   },
   "scripts": {
     "lint": "eslint src test",
@@ -42,5 +55,8 @@
     "test": "mocha --compilers js:babel-register $(find test -name '*.spec.js')",
     "test:watch": "mocha --compilers js:babel-register --watch $(find test -name '*.spec.js')",
     "examples": "babel-node examples/server.js"
+  },
+  "bin": {
+    "quantum": "./bin/quantum.js"
   }
 }

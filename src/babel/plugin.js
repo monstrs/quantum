@@ -72,7 +72,7 @@ export default function ({ types: t }) {
         if (this.localImportName !== node.callee.object.name) return
 
         if (node.callee.property.name === 'create') {
-          const { filename } = hub.file.opts
+          const filename = getFileRootPath(hub.file.opts.filename)
 
           const className = getClassNameFromPath(filename, this.fileRootPath)
           const properties = node.arguments[0].properties

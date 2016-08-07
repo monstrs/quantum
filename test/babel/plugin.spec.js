@@ -18,7 +18,7 @@ describe('check babel compile styles plugin', () => {
     const { code } = transformFileSync(path.resolve(__dirname, './fixtures/Base.js'), config)
 
     expect(code).to.contain('createClassMap')
-    expect(code).to.contain('self: ')
+    expect(code).to.contain('self\':')
   })
 
   it('extract styles', () => {

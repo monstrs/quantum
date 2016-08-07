@@ -5,13 +5,13 @@ import Text from './components/Text'
 render((
   <div>
     <Text>
-      adfasd
+      Text
     </Text>
     <Text red>
-      adfasd
+      Red text
     </Text>
     <Text large>
-      adfasd
+      Large text
     </Text>
   </div>
 ), document.body.appendChild(document.createElement('div')))
