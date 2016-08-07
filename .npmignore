@@ -1,0 +1,6 @@
+examples
+src
+test
+.*
+*.md
+docker-compose.yml

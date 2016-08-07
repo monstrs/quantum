@@ -53,7 +53,7 @@ export const module = {
 
 export const resolve = {
   alias: {
-    'quantum': path.resolve(__dirname, '..', 'src'),
+    'elementum': path.resolve(__dirname, '..', 'src'),
   },
 }
 

@@ -1,8 +1,8 @@
 import { join, isAbsolute } from 'path'
 import { getModClassName, getClassNameFromPath } from '../utils/className'
 
-const STYLES_COMMENT_ID = 'QUANTUM_STYLES_COMMENT'
-const EXTRACTED_STYLES_VAR = 'QUANTUM_EXTRACTED_STYLES'
+const STYLES_COMMENT_ID = 'ELEMENTUM_STYLES_COMMENT'
+const EXTRACTED_STYLES_VAR = 'ELEMENTUM_EXTRACTED_STYLES'
 
 export function hasStyles(code) {
   return code.indexOf(STYLES_COMMENT_ID) !== -1
@@ -56,7 +56,7 @@ export default function ({ types: t }) {
         },
       },
       ModuleDeclaration({ node }) {
-        if (!(node.source && node.source.value === 'quantum')) return
+        if (!(node.source && node.source.value === 'elementum')) return
 
         const specifiers = node.specifiers.filter(item => item.imported.name === 'StyleSheet')
 
