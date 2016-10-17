@@ -1,5 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import path from 'path'
+import webpack from 'webpack'
 import autoprefixer from 'autoprefixer'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import CssResolvePlugin from '../webpack/css-resolve-plugin'
@@ -7,15 +8,6 @@ import CssResolvePlugin from '../webpack/css-resolve-plugin'
 export const output = {
   path: '/',
 }
-
-export const postcss = [
-  autoprefixer({
-    browsers: [
-      '>2%',
-      'last 2 versions',
-    ],
-  }),
-]
 
 export const module = {
   loaders: [
@@ -45,4 +37,16 @@ export const module = {
 export const plugins = [
   new CssResolvePlugin(),
   new ExtractTextPlugin('index.css'),
+  new webpack.LoaderOptionsPlugin({
+    options: {
+      postcss: [
+        autoprefixer({
+          browsers: [
+            '>2%',
+            'last 2 versions',
+          ],
+        }),
+      ],
+    },
+  }),
 ]
