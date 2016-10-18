@@ -1,6 +1,6 @@
 {
   "name": "elementum",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "lib",
   "dependencies": {
     "autoprefixer": "^6.4.0",
@@ -17,7 +17,7 @@
     "ramda": "^0.21.0",
     "react": "^15.0.1",
     "style-loader": "^0.13.1",
-    "unionfs": "git://github.com/monstrs-forks/unionfs.git",
+    "unionfs": "0.0.9",
     "webpack": "^2.1.0-beta.20"
   },
   "devDependencies": {
