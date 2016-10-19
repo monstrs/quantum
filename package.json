@@ -1,6 +1,6 @@
 {
   "name": "elementum",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "lib",
   "dependencies": {
     "autoprefixer": "^6.4.0",

@@ -14,6 +14,12 @@ export function extractStyles(code) {
   return (parts[1] || '').substr(1).replace(`var ${EXTRACTED_STYLES_VAR} = `, '')
 }
 
+export function removeStyles(code) {
+  const regexp = new RegExp(`(//${STYLES_COMMENT_ID})((.|[\\r\\n])*?)(//${STYLES_COMMENT_ID})`, 'gm')
+
+  return code.replace(regexp, '')
+}
+
 export function getFileRootPath(configPath = '') {
   if (configPath && isAbsolute(configPath)) {
     return configPath

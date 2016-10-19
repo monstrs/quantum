@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import { hasStyles, extractStyles } from '../babel/plugin'
+import { hasStyles, extractStyles, removeStyles } from '../babel/plugin'
 import { stylesToRule } from '../transform'
 import cssfs from './cssfs'
 
@@ -17,7 +17,7 @@ function loader(src, map) {
     if (css.length > 0) {
       cssfs.appendFileSync(target, css)
 
-      return this.callback(null, `${src}\nrequire('${target}')`, map)
+      return this.callback(null, `${removeStyles(src)}\nrequire('${target}')`, map)
     }
 
     return this.callback(null, src, map)
