@@ -12,7 +12,7 @@ export const match = (modifier, props = {}, state = {}) => {
 
   const modifierPath = toPath(modifier)
 
-  const linearMatch = target => {
+  const linearMatch = (target) => {
     const value = path(modifierPath, target)
 
     if (is(Boolean, value)) return value
