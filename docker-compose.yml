@@ -8,9 +8,9 @@ services:
     ports:
       - "8489:80"
 
-  npm:
+  yarn:
     image: node
     working_dir: /workspace
     volumes:
       - ./:/workspace
-    entrypoint: npm
+    entrypoint: yarn

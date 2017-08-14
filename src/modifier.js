@@ -21,9 +21,10 @@ export const match = (modifier, props = {}, state = {}) => {
     return !isEmpty(value)
   }
 
-  const matcher = modifierPath.length > 1 ?
-                    pathEq(init(modifierPath), last(modifierPath)) :
-                    linearMatch
+  const matcher =
+    modifierPath.length > 1 ?
+      pathEq(init(modifierPath), last(modifierPath)) :
+      linearMatch
 
   return matcher(props) || matcher(state)
 }

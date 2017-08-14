@@ -14,11 +14,10 @@ function createClassMap(classMap) {
 
 function create(styles) {
   const styleSheet = jss.createStyleSheet(styles, { named: true })
-  const rulesMap = styleSheet.rules.map
 
   const classMap = Object.keys(styles).reduce((result, modifier) => ({
     ...result,
-    [modifier]: rulesMap[modifier].className,
+    [modifier]: styleSheet.classes[modifier],
   }), {})
 
   styleSheet.attach()
