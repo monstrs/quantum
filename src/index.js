@@ -40,8 +40,20 @@ function createNamed(className, styles) {
   return createClassMap(classMap)
 }
 
+const createNative = styles => (props, state) => Object.keys(styles).reduce((result, modifier) => {
+  if (match(modifier, props, state)) {
+    return {
+      ...result,
+      ...styles[modifier],
+    }
+  }
+
+  return result
+}, {})
+
 export const StyleSheet = {
   create,
   createNamed,
   createClassMap,
+  createNative,
 }
