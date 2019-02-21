@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - yarn install
+  pre_build:
+    commands:
+      - VCS_COMMIT_ID="$(git rev-parse HEAD)"
+      - VCS_BRANCH_NAME="$CODEBUILD_SOURCE_VERSION"
+      - CI_BUILD_ID="${CODEBUILD_BUILD_ID}"
+      - CI_BUILD_URL=$(echo $CODEBUILD_AGENT_ENV_CODEBUILD_BUILD_URL | sed 's/#/%23/g')
+      - yarn build
+      - yarn test --json --outputFile test-results.json --testLocationInResults --testFailureExitCode 0 && cat ./test-results.json | yarn github-checks-cli --target jest --verbose
+      - yarn typecheck --pretty false | yarn github-checks-cli --target tsc --verbose
+      - yarn lint -t json -o ./lint-results.json --force && cat ./lint-results.json | yarn github-checks-cli --target tslint --verbose
