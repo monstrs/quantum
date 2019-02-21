@@ -1,0 +1,9 @@
+node_modules
+.c9
+.git
+build
+coverage
+
+# Build directory
+**/**/build/*
+**/**/dist/*

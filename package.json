@@ -1,45 +1,55 @@
 {
-  "name": "elementum",
-  "version": "0.4.2",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/monstrs/elementum.git"
-  },
-  "author": "Andrey Linko",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/monstrs/elementum/issues"
-  },
-  "homepage": "https://github.com/monstrs/elementum#readme",
-  "main": "lib",
+  "private": true,
   "scripts": {
-    "lint": "eslint src test -f table",
-    "build": "rimraf -rf lib && babel -d lib src",
-    "test": "ava test",
-    "test:watch": "ava --watch test",
-    "prepublish": "yarn run build"
-  },
-  "dependencies": {
-    "jss": "^8.1.0",
-    "ramda": "^0.24.1"
+    "commit": "git-cz",
+    "clean": "lerna run clean",
+    "format": "prettier --write '*.{js,yml,yaml,json}' 'packages/**/*.{js,ts,tsx,yml,yaml,json}'",
+    "lint": "tslint --project tsconfig.json -c tslint.json -t codeFrame packages/**/*.ts{,x}",
+    "typecheck": "tsc --noEmit",
+    "typecheck:watch": "tsc --watch --noEmit",
+    "test": "jest",
+    "build": "lerna run build"
   },
   "devDependencies": {
-    "ava": "^0.21.0",
-    "babel-cli": "^6.7.5",
-    "babel-eslint": "^7.0.0",
-    "babel-preset-es2015": "^6.6.0",
-    "babel-preset-stage-0": "^6.5.0",
-    "eslint": "^4.4.1",
-    "eslint-config-airbnb": "^15.1.0",
-    "eslint-plugin-import": "^2.0.1",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.2.0",
-    "rimraf": "^2.5.4"
+    "@commitlint/config-conventional": "7.5.0",
+    "@commitlint/config-lerna-scopes": "7.5.0",
+    "@monstrs/github-checks-cli": "1.1.1",
+    "@monstrs/github-checks-formatter-jest": "1.1.1",
+    "@monstrs/github-checks-formatter-tsc": "1.1.1",
+    "@monstrs/github-checks-formatter-tslint": "1.1.1",
+    "@types/jest": "^24.0.0",
+    "codecov": "3.1.0",
+    "commitizen": "3.0.5",
+    "cz-conventional-changelog": "2.1.0",
+    "cz-lerna-changelog": "2.0.2",
+    "husky": "1.3.1",
+    "jest": "^24.1.0",
+    "lerna": "^3.10.7",
+    "lint-staged": "8.1.1",
+    "prettier": "1.16.1",
+    "ts-jest": "^23.10.5",
+    "tslint": "5.12.1",
+    "tslint-config-prettier": "1.18.0",
+    "typescript": "3.3.1"
   },
-  "ava": {
-    "require": [
-      "babel-register"
-    ],
-    "babel": "inherit"
+  "workspaces": [
+    "packages/*"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn lint && yarn test"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "yarn format",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-lerna-changelog"
+    }
   }
 }

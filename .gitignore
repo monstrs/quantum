@@ -1,6 +1,8 @@
 # Logs
 logs
 *.log
+npm-debug.log*
+yarn-error.log
 
 # Runtime data
 pids
@@ -13,9 +15,6 @@ lib-cov
 # Coverage directory used by tools like istanbul
 coverage
 
-# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
-.grunt
-
 # node-waf configuration
 .lock-wscript
 
@@ -23,11 +22,27 @@ coverage
 build/Release
 
 # Dependency directory
-# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
 
-# Compiled files
-lib
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Auth
+.netrc
 
 # IDE cache directory
 .c9
+
+# MacOS temporary files
+.DS_Store
+
+# build files
+.rpt2_cache
+.rts2_cache_cjs
+.rts2_cache_es
+.rts2_cache_umd
+build
+dist

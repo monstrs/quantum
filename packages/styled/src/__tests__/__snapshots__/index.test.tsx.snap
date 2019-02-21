@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`styled snapshot base should match latest render snapshot 1`] = `
+.emotion-0 {
+  background: red;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
