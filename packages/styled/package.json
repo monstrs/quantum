@@ -1,6 +1,6 @@
 {
   "name": "@elementum/styled",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -20,7 +20,7 @@
     "build": "microbundle --no-compress --sourcemap=false"
   },
   "dependencies": {
-    "@elementum/modifiers": "^0.1.6",
+    "@elementum/modifiers": "0.1.7",
     "@emotion/core": "^10.0.7",
     "@emotion/styled": "^10.0.7"
   },
