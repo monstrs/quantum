@@ -952,10 +952,10 @@
     npmlog "^4.1.2"
     write-file-atomic "^2.3.0"
 
-"@monstrs/github-checks-cli@1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@monstrs/github-checks-cli/-/github-checks-cli-1.1.1.tgz#79c851ad5aa55a889ed6e61e8f0a7460cceb91d0"
-  integrity sha512-vjxj1FkH+Mk+wg581gcxwl4tDR08F6B7VobarhzIOhNWh6nhELMqAKhibxmx0Gn1RexSAaQ3ZOZCJEJJMg6U5A==
+"@monstrs/github-checks-cli@1.1.3":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@monstrs/github-checks-cli/-/github-checks-cli-1.1.3.tgz#64daa8699086f774a65a62bb001e45d83850364d"
+  integrity sha512-/e2jp2kq3ot/h/ItRWfH/3lM24okJqQyIy8H71b/x7xsk/czNf5pLZ5a7r39oKABlx9XSUqrEZMQO2KJki5/jg==
   dependencies:
     commander "^2.19.0"
     cross-fetch "^3.0.1"
