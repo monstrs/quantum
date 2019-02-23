@@ -980,12 +980,12 @@
   dependencies:
     "@monstrs/github-checks-formatter-common" "1.1.3"
 
-"@monstrs/github-checks-formatter-tsc@1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@monstrs/github-checks-formatter-tsc/-/github-checks-formatter-tsc-1.1.1.tgz#17d31441e09cbbadce743f19cdd6c5aba1ce1177"
-  integrity sha512-FJBDASunTlt9sszYeEIxIadZgXoPBKxMcZfxX+e7RmauJi92eMlO9yy6UUYU47/y6T536AO9qsulDYjoGF8r6A==
+"@monstrs/github-checks-formatter-tsc@1.1.3":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@monstrs/github-checks-formatter-tsc/-/github-checks-formatter-tsc-1.1.3.tgz#4696e5593c76826a0daad81588a940c6dc595292"
+  integrity sha512-N2wrnYm+hH+iCjjQPjjDDPiRkQE7IA3bHxA9No96dEbrbSpVf/lkhMNqaxI9EPF+W8cHUdHOywtzEFMEoBeYlg==
   dependencies:
-    "@monstrs/github-checks-formatter-common" "1.1.1"
+    "@monstrs/github-checks-formatter-common" "1.1.3"
 
 "@monstrs/github-checks-formatter-tslint@1.1.1":
   version "1.1.1"
