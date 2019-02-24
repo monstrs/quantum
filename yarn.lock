@@ -963,11 +963,6 @@
     error-stack-parser "^2.0.2"
     npmlog "^4.1.2"
 
-"@monstrs/github-checks-formatter-common@1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@monstrs/github-checks-formatter-common/-/github-checks-formatter-common-1.1.1.tgz#589b57dc0399e2df32b7f358de949c60ebe58830"
-  integrity sha512-2B+CP5BrpnO++pcNvX5/lVw4EdPQC78ZhBNwqKngXV3eJkVeG4+m8WJFldQJYBxgRzNLiU/51/3tR54OykD5Zg==
-
 "@monstrs/github-checks-formatter-common@1.1.3":
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/@monstrs/github-checks-formatter-common/-/github-checks-formatter-common-1.1.3.tgz#b1f8e63fd3b4c2220638ac13db4146aebda1b4b2"
@@ -987,12 +982,12 @@
   dependencies:
     "@monstrs/github-checks-formatter-common" "1.1.3"
 
-"@monstrs/github-checks-formatter-tslint@1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@monstrs/github-checks-formatter-tslint/-/github-checks-formatter-tslint-1.1.1.tgz#8c06835c8c5b2a2f3b27f9a7754e3a6298f530b2"
-  integrity sha512-tUSxVaIxmgKt/i0dwz6mFpEklJzlXNlEE9FCDZCjSW+JvWMgsYq76ppNgTY7Mt6YFFv9kpPrfHzvxegstCa9pg==
+"@monstrs/github-checks-formatter-tslint@1.1.3":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@monstrs/github-checks-formatter-tslint/-/github-checks-formatter-tslint-1.1.3.tgz#171cf8afe7357634c02bb5e91fa5379039256eee"
+  integrity sha512-p4BxzYCHy84w+CISiSIbSRYqezcw/c0CRNTXmOpNWxJr1Vs2oN9d9lXdMPAz/6vO1zr8rZ6YjqbRpmuiMcj54A==
   dependencies:
-    "@monstrs/github-checks-formatter-common" "1.1.1"
+    "@monstrs/github-checks-formatter-common" "1.1.3"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
