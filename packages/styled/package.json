@@ -29,8 +29,8 @@
     "@types/react": "16.8.10",
     "jest-emotion": "10.0.10",
     "microbundle": "0.11.0",
-    "react": "16.8.5",
-    "react-test-renderer": "16.8.5",
+    "react": "16.8.6",
+    "react-test-renderer": "16.8.6",
     "rimraf": "2.6.3"
   },
   "peerDependencies": {
