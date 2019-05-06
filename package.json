@@ -11,8 +11,8 @@
     "build": "lerna run build"
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "7.5.0",
-    "@commitlint/config-lerna-scopes": "7.5.0",
+    "@commitlint/config-conventional": "7.6.0",
+    "@commitlint/config-lerna-scopes": "7.6.0",
     "@monstrs/github-checks-cli": "1.1.3",
     "@monstrs/github-checks-formatter-jest": "1.1.3",
     "@monstrs/github-checks-formatter-tsc": "1.1.3",
