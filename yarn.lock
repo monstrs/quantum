@@ -1165,12 +1165,12 @@
   resolved "https://registry.yarnpkg.com/@monstrs/github-checks-formatter-common/-/github-checks-formatter-common-1.1.4.tgz#1b9aad88691fabb6f88f969309eebcd736588a01"
   integrity sha512-mywpZgp4pDUrtBalHPEntwEdoosI2gluch/eXhGrYpqzgnwGdcmqGyLAqyGuTzqAENZVCeQIMjxhFI9caF1qjw==
 
-"@monstrs/github-checks-formatter-jest@1.1.3":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@monstrs/github-checks-formatter-jest/-/github-checks-formatter-jest-1.1.3.tgz#18e5a91332c41a9cf1d50e4e8d815806b950d5b6"
-  integrity sha512-/ZkymDk+NRseetviXaWLfx3BfAPv6FVeC3NU3dFPS0Ve9KQGNr2V4bTeO9miXuoWfdkIP8RaYfaumv9/unQ5+g==
+"@monstrs/github-checks-formatter-jest@1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@monstrs/github-checks-formatter-jest/-/github-checks-formatter-jest-1.1.4.tgz#9fde80f5855cb58626367dc88eef7e9eccc310d7"
+  integrity sha512-flblRgD+TDX5YRHYDden5JRrbe210ibIn/K6f+5qlRL/FAWHbLAcP5QWcpJrO0NIW/fWp3lKRgLbnJuySpKXeg==
   dependencies:
-    "@monstrs/github-checks-formatter-common" "1.1.3"
+    "@monstrs/github-checks-formatter-common" "1.1.4"
 
 "@monstrs/github-checks-formatter-tsc@1.1.4":
   version "1.1.4"
