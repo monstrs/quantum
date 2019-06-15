@@ -1255,10 +1255,10 @@
   dependencies:
     "@monstrs/github-checks-formatter-common" "1.1.4"
 
-"@monstrs/github-checks-formatter-tslint@1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@monstrs/github-checks-formatter-tslint/-/github-checks-formatter-tslint-1.1.4.tgz#55f9449200b51d92d7cc08bc8f942edbd7579705"
-  integrity sha512-KSGlfy6TAAa8bouXTNqsxe3GYNpwx2CJKD8Dwo5tMBkGxTn2v83Vaf/VbZPSygk9z33oOoDlIRrkHsZigCJMnw==
+"@monstrs/github-checks-formatter-tslint@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@monstrs/github-checks-formatter-tslint/-/github-checks-formatter-tslint-1.2.0.tgz#b31fc656d25e1ef1aedef3ab3f7bd131aede271a"
+  integrity sha512-qv0kefLr8orZM2Nng2QfrOeOJ+Wwzb3Z3kF4svc3/h15sYzBuj/6wZUWvIqLn8GN22BaIcIBLaqrkFnLOll1jA==
   dependencies:
     "@monstrs/github-checks-formatter-common" "1.1.4"
 
