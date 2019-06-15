@@ -1225,14 +1225,14 @@
     npmlog "^4.1.2"
     write-file-atomic "^2.3.0"
 
-"@monstrs/github-checks-cli@1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@monstrs/github-checks-cli/-/github-checks-cli-1.1.4.tgz#49895074ac5895ee17881605d52b91d45e878f47"
-  integrity sha512-yfE/L94LwGPdajh5YZ/6VCKhobuFllg2gRsUZWDAHyFDqu2rHlMjn1SJrDaSf7hnK2QwTO7Ud+h8tfNdi5rBzA==
+"@monstrs/github-checks-cli@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@monstrs/github-checks-cli/-/github-checks-cli-1.2.0.tgz#bea645a1a37b358c174bd5161a92e0a0a880917d"
+  integrity sha512-u9XilhlS1fax17Jl9pIQIeGA9pR0xiY8cYb/7f296ZFVFyDTLLUqX7w7W54lFWEhGJ5aH8mR7LaNcNaJIKuoaA==
   dependencies:
     commander "^2.19.0"
     cross-fetch "^3.0.1"
-    env-ci "^3.2.0"
+    env-ci "^4.0.0"
     error-stack-parser "^2.0.2"
     npmlog "^4.1.2"
 
@@ -3294,13 +3294,13 @@ entities@^1.1.1:
   resolved "https://registry.yarnpkg.com/entities/-/entities-1.1.2.tgz#bdfa735299664dfafd34529ed4f8522a275fea56"
   integrity sha512-f2LZMYl1Fzu7YSBKg+RoROelpOaNrcGmE9AZubeDfrCEia483oW4MI4VyFd5VNHIgQ/7qm1I0wUHK1eJnn2y2w==
 
-env-ci@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/env-ci/-/env-ci-3.2.0.tgz#982f02a0501ca8c43bf0765c5bd3d83ffb28b23a"
-  integrity sha512-TFjNiDlXrL8/pfHswdvJGEZzJcq3aBPb8Eka83hlGLwuNw9F9BC9S9ETlkfkItLRT9k5JgpGgeP+rL6/3cEbcw==
+env-ci@^4.0.0:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/env-ci/-/env-ci-4.1.1.tgz#b8438fc7258a0dc7a4f4c4816de730767946a718"
+  integrity sha512-eTgpkALDeYRGNhYM2fO9LKsWDifoUgKL7hxpPZqFMP2IU7f+r89DtKqCmk3yQB/jxS8CmZTfKnWO5TiIDFs9Hw==
   dependencies:
     execa "^1.0.0"
-    java-properties "^0.2.9"
+    java-properties "^1.0.0"
 
 err-code@^1.0.0:
   version "1.1.2"
@@ -4954,10 +4954,10 @@ istanbul-reports@^2.1.1:
   dependencies:
     handlebars "^4.1.0"
 
-java-properties@^0.2.9:
-  version "0.2.10"
-  resolved "https://registry.yarnpkg.com/java-properties/-/java-properties-0.2.10.tgz#2551560c25fa1ad94d998218178f233ad9b18f60"
-  integrity sha512-CpKJh9VRNhS+XqZtg1UMejETGEiqwCGDC/uwPEEQwc2nfdbSm73SIE29TplG2gLYuBOOTNDqxzG6A9NtEPLt0w==
+java-properties@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/java-properties/-/java-properties-1.0.1.tgz#ea0b5986c0894d73cf2a44de8bd216c459a07a94"
+  integrity sha512-HbTaaXlIHoDVNXjmp4flOBWOfYBkrVN8dD1tp4m+95M/ADSDW/BxWbiwyVIhw/2+5d0cof4PHZCbE7+S1ukTQw==
 
 jest-changed-files@^24.8.0:
   version "24.8.0"
